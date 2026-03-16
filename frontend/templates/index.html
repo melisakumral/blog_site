@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siber Günlük | Melisa Kumral</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <header class="cyber-header">
+                <div class="logo">
+                    <span class="cyber-icon">//</span> SİBER GÜNLÜKLERİ 
+                </div>
+                <nav class="cyber-nav">
+                    <a href="/" class="nav-btn neon-green">[TERMINAL]</a>
+                    {% if session['logged_in'] %}
+                        <a href="/admin" class="nav-btn neon-green">[REPORT_WRITE]</a>
+                        <a href="/logout" class="nav-btn neon-red logout-btn">[LOGOUT]</a>
+                    {% else %}
+                        <a href="/login" class="nav-btn neon-green">[ADMIN_LOGIN]</a>
+                    {% endif %}
+                </nav>
+            </header>
+
+            <section class="welcome-hero">
+                <h1>SİBER GÜVENLİK DÜNYASINA HOŞ GELDİNİZ! <span class="cursor-blink">|</span></h1>
+                <p>Güvenlik analizleri, sistem notları ve siber dünyanın derinliklerinden istihbarat raporları.</p>
+            </section>
+
+            <main>
+                <h2 class="section-title">// Son Yayınlanan Analiz Raporları!</h2>
+                
+                <div class="reports-feed">
+                    {% if posts %}
+                        {% for post in posts %}
+                            <article class="cyber-post-card">
+                                <div class="post-header">
+                                    <h3>{{ post.title }}</h3>
+                                    <span class="status green">[ONLINE]</span>
+                                </div>
+                                <div class="post-body">
+                                    <p>{{ post.content }}</p>
+                                </div>
+                                <div class="post-footer">
+                                    <span class="date">TIMESTAMP: {{ post.date_posted.strftime('%Y-%m-%d %H:%M') }}</span>
+                                    {% if session['logged_in'] %}
+                                        <a href="/delete/{{ post.id }}" class="action-btn neon-red">[-] Sisteme Sızmayı Sil</a>
+                                    {% endif %}
+                                </div>
+                            </article>
+                        {% endfor %}
+                    {% else %}
+                        <div class="empty-state">
+                            <p>Henüz bir veri girişi yapılmadı. Sistem hazır, veri bekleniyor...</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </main>
+
+            <footer class="cyber-footer">
+                <p class="fade-in">// Developed and Created by Melisa kumral</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

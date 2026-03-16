@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Siber Komuta Merkezi | Melisa Kumral</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <div class="main-wrapper">
+        <div class="container">
+            <header class="cyber-header">
+                <div class="logo"><span class="cyber-icon">//</span>ROOT@MELİSA</div>
+                <nav class="cyber-nav">
+    <a href="/" class="nav-btn neon-green">[TERMINAL]</a>
+
+    {% if session['logged_in'] %}
+        <a href="/logout" class="nav-btn neon-red logout-btn">[LOGOUT]</a>
+    {% else %}
+        <a href="/login" class="nav-btn neon-green">[LOGIN]</a>
+    {% endif %}
+</nav>
+            </header>
+
+            {% block content %}{% endblock %}
+
+            <footer class="cyber-footer">
+                <p>// Created by Melisa kumral | System Status: Secure</p>
+            </footer>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

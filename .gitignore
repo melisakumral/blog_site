@@ -1,0 +1,18 @@
+# Python çöpleri
+__pycache__/
+*.pyc
+
+# Sanal ortam
+venv/
+env/
+
+# Gizli bilgiler
+.env
+
+# Veritabanı
+instance/
+backend/instance/
+*.db
+
+# VS Code ayarları
+.vscode/

@@ -1,0 +1,167 @@
+/* Google Fonts'tan siber tipi yazı tipi */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #050505;
+    --card-bg: #0a0a0a;
+    --neon-green: #00ff41;
+    --neon-red: #ff0055;
+    --text-primary: #ffffff;
+    --text-muted: #888888;
+    --border-color: #1a1a1a;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Fira Code', monospace;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Matrix Canvas */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.1; /* Efekti çok baskın yapmamak için */
+}
+
+.main-wrapper {
+    position: relative;
+    z-index: 10;
+    background: transparent;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Siber Header Tasarımı (Butonlar Sağ Üstte) */
+.cyber-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 10px var(--neon-green);
+}
+
+.cyber-icon { color: var(--neon-green); }
+
+.cyber-nav { display: flex; gap: 15px; }
+
+/* Buton Tasarımları */
+.nav-btn {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border: 1px solid;
+    border-radius: 5px;
+    transition: 0.3s all;
+    text-transform: uppercase;
+}
+
+.neon-green {
+    color: var(--neon-green);
+    border-color: var(--neon-green);
+}
+
+.neon-green:hover {
+    background: var(--neon-green);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-green);
+    transform: translateY(-3px);
+}
+
+.neon-red {
+    color: var(--neon-red);
+    border-color: var(--neon-red);
+}
+
+.neon-red:hover {
+    background: var(--neon-red);
+    color: white;
+    box-shadow: 0 0 20px var(--neon-red);
+}
+
+/* Karşılama Alanı (Hero) */
+.welcome-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid var(--neon-green);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+.welcome-hero h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    color: white;
+}
+
+/* Yanıp sönen imleç animasyonu */
+.cursor-blink {
+    animation: blink 1s infinite;
+    color: var(--neon-green);
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Blog Kartları - Canlı Görünüm */
+.cyber-post-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    transition: 0.3s all;
+}
+
+.cyber-post-card:hover {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+}
+
+.cyber-post-card h3 {
+    margin-top: 0;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.post-header { display: flex; justify-content: space-between; align-items: center; }
+
+.status { font-size: 0.8rem; font-weight: 700; }
+.status.green { color: var(--neon-green); }
+
+.post-footer {
+    margin-top: 20px;
+    border-top: 1px solid #111;
+    padding-top: 15px;
+    font-size: 0.8rem;
+    color: #444;
+}
+
+/* Created by Melisa Kumral - Footer */
+.cyber-footer {
+    text-align: center;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    color: #444;
+}
