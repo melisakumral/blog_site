@@ -1,4 +1,4 @@
-# 🛡️ Melisa'nın Siber Günlüğü (Cyber Dashboard)
+# 🛡️Siber Günlük
 
 Bu proje, modern web teknolojileri ve siber güvenlik prensipleri birleştirilerek geliştirilmiş, güvenli bir **İstihbarat ve Analiz Paylaşım Platformu**dur. Bir bilgisayar mühendisi vizyonuyla, güvenli oturum yönetimi ve dinamik içerik kontrolü odaklı inşa edilmiştir.
 
